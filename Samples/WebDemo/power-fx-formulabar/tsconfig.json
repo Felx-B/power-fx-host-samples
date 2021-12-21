@@ -1,0 +1,12 @@
+{
+  "extends": "./node_modules/@ppux/build-scripts/tsconfig.ppux-base.json",
+  "compilerOptions": {
+    "outDir": "lib",
+    "rootDir": "src",
+    "target": "es5",
+    "lib": ["es5", "dom", "es2015.promise", "es2015.collection"]
+  },
+  "references": [],
+  "exclude": ["lib", "lib-cjs", "node_modules"],
+  "include": ["src/**/*"]
+}

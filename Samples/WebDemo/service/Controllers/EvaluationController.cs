@@ -16,7 +16,7 @@ namespace PowerFxService.Controllers
     public class EvaluationController : ControllerBase
     {
         private readonly ILogger<EvaluationController> _logger;
-        
+
         public EvaluationController(ILogger<EvaluationController> logger)
         {
             _logger = logger;
@@ -38,9 +38,23 @@ namespace PowerFxService.Controllers
             try
             {
                 var engine = new PowerFxScopeFactory().GetEngine();
-                
-                var parameters = (RecordValue) FormulaValue.FromJson(body.context);
+
+                var parameters = (RecordValue)FormulaValue.FromJson(body.context);
+                //engine.UpdateVariable("ThisItem", FormulaValue.FromJson("{ \"p1\": {  \"p11\": 12 }, \"p2\": { \"p21\" : 45 }  }"));
+
+
+                //engine.SetFormula("ThisItem", (string a) =>
+                //{
+                //    return FormulaValue.New(12);
+
+                //});
+
+
                 var result = engine.Eval(body.expression, parameters);
+                //var check = engine.Check(body.expression);
+
+
+
 
                 var resultString = PowerFxHelper.TestToString(result);
 

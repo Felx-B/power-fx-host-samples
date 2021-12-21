@@ -1,0 +1,1330 @@
+{
+  "name": "@microsoft/power-fx-formulabar",
+  "entries": [
+    {
+      "date": "Wed, 24 Nov 2021 09:58:31 GMT",
+      "tag": "@microsoft/power-fx-formulabar_v2.0.4",
+      "version": "2.0.4",
+      "comments": {
+        "patch": [
+          {
+            "comment": "minor change to prompt change file",
+            "author": "anagupta@microsoft.com",
+            "commit": "eb64eeb4a014d1a35c03e22eb87f16df6ce57263",
+            "package": "@microsoft/power-fx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 24 Nov 2021 06:18:21 GMT",
+      "tag": "@microsoft/power-fx-formulabar_v2.0.3",
+      "version": "2.0.3",
+      "comments": {
+        "none": [
+          {
+            "comment": "Bump @ppux/build-scripts to v1.0.2",
+            "author": "hacahill@microsoft.com",
+            "commit": "4dfd65682dadfe28a419edb5d9d0a9add7cf60f2",
+            "package": "@microsoft/power-fx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 23 Nov 2021 19:56:22 GMT",
+      "tag": "@microsoft/power-fx-formulabar_v2.0.3",
+      "version": "2.0.3",
+      "comments": {
+        "none": [
+          {
+            "comment": "changed scope to @microsoft and name to power-fx-formula bar + added license",
+            "author": "anagupta@microsoft.com",
+            "commit": "46246f23f9a2061dfe50825a49da4a609b91a50c",
+            "package": "@microsoft/power-fx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 19 Nov 2021 19:12:40 GMT",
+      "tag": "@ms/powerfx-formulabar_v2.0.3",
+      "version": "2.0.3",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Mitigate monaco getTopFromLineNumber inconsistency by only use it when lineCount > 1",
+            "author": "hailiu@microsoft.com",
+            "commit": "9278eb3c0d5065922021538c10e4239b673be984",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 19 Nov 2021 10:39:36 GMT",
+      "tag": "@ms/powerfx-formulabar_v2.0.2",
+      "version": "2.0.2",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v1.0.2",
+            "author": "ahkotb@microsoft.com",
+            "commit": "7662a87efb160c85026be88a75d48d393f2d0c43",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 17 Nov 2021 06:21:50 GMT",
+      "tag": "@ms/powerfx-formulabar_v2.0.1",
+      "version": "2.0.1",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Update Fluent UI to 8.37.0",
+            "author": "lustan@microsoft.com",
+            "commit": "c3d1f2f1940a1be784f23a779cda250579a5bec0",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Mon, 15 Nov 2021 22:20:31 GMT",
+      "tag": "@ms/powerfx-formulabar_v2.0.0",
+      "version": "2.0.0",
+      "comments": {
+        "major": [
+          {
+            "comment": "applying package updates",
+            "author": "xiyu@microsoft.com",
+            "commit": "d2b79145d5dc0f0454bb28c7c56bc9e622f1f7b4",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ],
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v1.0.0",
+            "author": "xiyu@microsoft.com",
+            "commit": "d2b79145d5dc0f0454bb28c7c56bc9e622f1f7b4",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 11 Nov 2021 23:02:58 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.3.38",
+      "version": "1.3.38",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.18.11",
+            "author": "dlannoye@microsoft.com",
+            "commit": "f4f87df51cb1c2f0cb2ec52a3ff88ffc95053c87",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 11 Nov 2021 06:18:26 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.3.37",
+      "version": "1.3.37",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.18.10",
+            "author": "ruship@microsoft.com",
+            "commit": "382a732eb5c1cb91cdbd7519b0b53fb1ac4660a0",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 09 Nov 2021 00:20:10 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.3.36",
+      "version": "1.3.36",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.18.9",
+            "author": "lustan@microsoft.com",
+            "commit": "b8e2dc4c725dc4c5068d4d2b06cc0b57daa8f39d",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Mon, 08 Nov 2021 12:17:26 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.3.35",
+      "version": "1.3.35",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.18.8",
+            "author": "lucasmu@microsoft.com",
+            "commit": "a574e62aaf6016249309eb48d1fe40ef194ea106",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 05 Nov 2021 00:25:17 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.3.34",
+      "version": "1.3.34",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Improve formula bar configuration for publishing",
+            "author": "dlannoye@microsoft.com",
+            "commit": "a152899c26972790927a47909c32fcbb1764c1f3",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 02 Nov 2021 18:18:02 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.3.33",
+      "version": "1.3.33",
+      "comments": {
+        "none": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.18.6",
+            "author": "hacahill@microsoft.com",
+            "commit": "4a3709b2d81a6d2fa30b12e931f7ddd8bddd2631",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Mon, 25 Oct 2021 19:46:43 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.3.33",
+      "version": "1.3.33",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.18.6",
+            "author": "vch@microsoft.com",
+            "commit": "82dee2c0133e69533cdbbb6c39fbd38770bd33de",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 21 Oct 2021 18:30:37 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.3.32",
+      "version": "1.3.32",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.18.5",
+            "author": "lustan@microsoft.com",
+            "commit": "0dd46230160414efa2d26b6eb8dcb264a56b5942",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 19 Oct 2021 18:25:15 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.3.31",
+      "version": "1.3.31",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.18.4",
+            "author": "ruship@microsoft.com",
+            "commit": "1e08a6341f1dd7383a60684f79cc558d2e97ce0f",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 16 Oct 2021 12:18:39 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.3.30",
+      "version": "1.3.30",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.18.3",
+            "author": "anchoudh@microsoft.com",
+            "commit": "4fa823e93a167824d3ad56a9f9e2d99d8d01fac1",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 13 Oct 2021 06:19:11 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.3.29",
+      "version": "1.3.29",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.18.2",
+            "author": "johuang@microsoft.com",
+            "commit": "2f335f9cfc10a7e50bed125a272c12fe55b8bb07",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 12 Oct 2021 18:17:41 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.3.28",
+      "version": "1.3.28",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.18.1",
+            "author": "sebastian.moralesd@gmail.com",
+            "commit": "c1e2789f39737324420b43655dfea0c55acb8b14",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 08 Oct 2021 06:17:18 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.3.27",
+      "version": "1.3.27",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.18.0",
+            "author": "nerios@microsoft.com",
+            "commit": "5762b5149c355f820882995f61294f8f47c3019a",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 06 Oct 2021 17:22:27 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.3.26",
+      "version": "1.3.26",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.17.3",
+            "author": "dekamb@microsoft.com",
+            "commit": "615ee302e2ad6ea80fa361d32a5a42d2d52248ef",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 05 Oct 2021 18:27:48 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.3.25",
+      "version": "1.3.25",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.17.2",
+            "author": "vicazin@microsoft.com",
+            "commit": "120717038b46445082e24b24389d26408653a65f",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Mon, 04 Oct 2021 18:18:30 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.3.24",
+      "version": "1.3.24",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.17.1",
+            "author": "ahkotb@microsoft.com",
+            "commit": "34802455ec317c0319c780415fe0ef5aa9a9dc89",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 23 Sep 2021 00:17:32 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.3.23",
+      "version": "1.3.23",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.17.0",
+            "author": "ruship@microsoft.com",
+            "commit": "3311bc265c90f38b83c2a8d5a25028c10b7d5e78",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 18 Sep 2021 00:17:40 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.3.22",
+      "version": "1.3.22",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.16.4",
+            "author": "lustan@microsoft.com",
+            "commit": "c56b2fd35a1c1e5bf7a66f0d14968ccdaf0e8692",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 17 Sep 2021 18:21:45 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.3.21",
+      "version": "1.3.21",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.16.3",
+            "author": "dlannoye@microsoft.com",
+            "commit": "1b3e6c90c084e45257515e1104ff9a6aa5fd55ad",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 17 Sep 2021 00:20:15 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.3.20",
+      "version": "1.3.20",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.16.2",
+            "author": "ruship@microsoft.com",
+            "commit": "e27b8502fc1944d9e8e5408919aea57abc42f65c",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 15 Sep 2021 18:21:54 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.3.19",
+      "version": "1.3.19",
+      "comments": {
+        "patch": [
+          {
+            "comment": "[FluentUI] Go to version before breaking panel changes (8.30.1 -> 8.30.0)",
+            "author": "lustan@microsoft.com",
+            "commit": "19b55f6c2a9895d491682752308f46b6a4c7798b",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 14 Sep 2021 12:22:24 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.3.18",
+      "version": "1.3.18",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Update to FluentUI 8.30.1",
+            "author": "lustan@microsoft.com",
+            "commit": "fac3103011eeacca148a02e4b68d86a84d3cf9dc",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 14 Sep 2021 06:17:56 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.3.17",
+      "version": "1.3.17",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.16.0",
+            "author": "carlos.dietrich@microsoft.com",
+            "commit": "49ac66a483747039a3386b9fa60dbfdd946d9a11",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 10 Sep 2021 19:27:01 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.3.16",
+      "version": "1.3.16",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.15.12",
+            "author": "dlannoye@microsoft.com",
+            "commit": "7be0bc1dd7291d68494f9fed3284bf2c410e1c0a",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 03 Sep 2021 00:18:05 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.3.15",
+      "version": "1.3.15",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.15.10",
+            "author": "ahkotb@microsoft.com",
+            "commit": "a7231950efdf36cf73f9b044f7dd33e608cf513e",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 31 Aug 2021 22:19:58 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.3.14",
+      "version": "1.3.14",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.15.9",
+            "author": "dlannoye@microsoft.com",
+            "commit": "6860390fbab4620458f6f04ef647d6cd9d56ac63",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 31 Aug 2021 12:20:41 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.3.13",
+      "version": "1.3.13",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.15.8",
+            "author": "lustan@microsoft.com",
+            "commit": "72595c30a366b8a1b709630fd8c76a8b3ef3a036",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 28 Aug 2021 00:20:23 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.3.12",
+      "version": "1.3.12",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.15.7",
+            "author": "jordanberger@microsoft.com",
+            "commit": "57154e96c2d1b75c00069d8fc1b55c5864329432",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 20 Aug 2021 06:16:39 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.3.11",
+      "version": "1.3.11",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.15.6",
+            "author": "dlannoye@microsoft.com",
+            "commit": "2a354e5fe961028e14628d17617e26673f6f64ff",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 19 Aug 2021 06:17:43 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.3.10",
+      "version": "1.3.10",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Add eslint-plugin-security",
+            "author": "lustan@microsoft.com",
+            "commit": "aa91250399f386d2c2db92af6db654894f78501c",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 18 Aug 2021 03:07:04 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.3.9",
+      "version": "1.3.9",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.15.4",
+            "author": "dlannoye@microsoft.com",
+            "commit": "82f2c3da693305dd5ee0f418c413a1719e9e958c",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 11 Aug 2021 06:18:04 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.3.8",
+      "version": "1.3.8",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.15.3",
+            "author": "email not defined",
+            "commit": "4e25db0af84d6a32368d08fec0f90662bd317f96",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 07 Aug 2021 00:17:57 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.3.7",
+      "version": "1.3.7",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.15.2",
+            "author": "wzh@microsoft.com",
+            "commit": "63e9440f27dc1c88c1e2968fc4694098c55274a3",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 04 Aug 2021 18:26:40 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.3.6",
+      "version": "1.3.6",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.15.1",
+            "author": "dlannoye@microsoft.com",
+            "commit": "cf2c9c7fd8c9e86a7fd743f141db140222efa8a6",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 28 Jul 2021 00:18:49 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.3.5",
+      "version": "1.3.5",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.15.0",
+            "author": "lustan@microsoft.com",
+            "commit": "adfe71373574fce445f7497cf26f52f1888ca591",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 23 Jul 2021 06:20:14 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.3.4",
+      "version": "1.3.4",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.14.2",
+            "author": "ahkotb@microsoft.com",
+            "commit": "76ef9af602120d63a9c5954a5792546444451482",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 17 Jul 2021 00:17:45 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.3.3",
+      "version": "1.3.3",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.14.1",
+            "author": "ahkotb@microsoft.com",
+            "commit": "0e5425348949f3ff3cb6269af9926d34bd75abfb",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 09 Jul 2021 00:17:12 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.3.2",
+      "version": "1.3.2",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Don't call initialFixup when default value is empty",
+            "author": "wzh@microsoft.com",
+            "commit": "b93bae53cbd4359e51e114778bacdbfcf09a9937",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 03 Jul 2021 00:14:03 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.3.1",
+      "version": "1.3.1",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Add PowerFxFormulaEditorWithInitialFixup component",
+            "author": "wzh@microsoft.com",
+            "commit": "b188242c73f6c696887f55833165ef2efa5e7c35",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 02 Jul 2021 00:16:45 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.3.0",
+      "version": "1.3.0",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Revert \"Merged PR 4685241: Upgrade monaco-editor/monaco-editor-webpack-plugin/react-monaco-editor\"",
+            "author": "wzh@microsoft.com",
+            "commit": "8d29696368496e20aa14aad19c9ae5348854f0a0",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ],
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.14.0",
+            "author": "wzh@microsoft.com",
+            "commit": "8d29696368496e20aa14aad19c9ae5348854f0a0",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 01 Jul 2021 00:16:07 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.2.4",
+      "version": "1.2.4",
+      "comments": {
+        "patch": [
+          {
+            "comment": "PowerFx formula bar code refactoring",
+            "author": "wzh@microsoft.com",
+            "commit": "fd14f9978f58b1512ea4d04524ce0f8cab16a3b2",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 30 Jun 2021 12:16:23 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.2.3",
+      "version": "1.2.3",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Removed old formula bar control",
+            "author": "wzh@microsoft.com",
+            "commit": "baa947894286252a8535ec6ec906296ab7005f1c",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 30 Jun 2021 06:18:34 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.2.2",
+      "version": "1.2.2",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Added editorFocusOnMount property",
+            "author": "sergioe@microsoft.com",
+            "commit": "77eb10d8ccf7835b1d606b7da54c623c87a2ae5e",
+            "package": "@ms/powerfx-formulabar"
+          },
+          {
+            "comment": "Fix keyword coloring",
+            "author": "wzh@microsoft.com",
+            "commit": "ba2a1ea8b151442c52fa4278da700a7cead55d62",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 30 Jun 2021 00:19:15 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.2.1",
+      "version": "1.2.1",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Update Fabric version",
+            "author": "jacalhou@microsoft.com",
+            "commit": "0f2cc411b01390b0f608f054a2271f086dfe0a9e",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 29 Jun 2021 06:17:57 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.2.0",
+      "version": "1.2.0",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Upgrade monaco-editor/monaco-editor-webpack-plugin/react-monaco-editor",
+            "author": "wzh@microsoft.com",
+            "commit": "17415076540431510ca6e4882c06653743c3389b",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ],
+        "patch": [
+          {
+            "comment": "Enable auto case correction and highlighting",
+            "author": "wzh@microsoft.com",
+            "commit": "9c9954c97b19bf5f586a115a6932951b3bdcf8c1",
+            "package": "@ms/powerfx-formulabar"
+          },
+          {
+            "comment": "Bump @ppux/build-scripts to v0.12.5",
+            "author": "vch@microsoft.com",
+            "commit": "80a8d59e504eabc20f1ac80be5e744a1819308a8",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Mon, 28 Jun 2021 19:35:47 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.1.9",
+      "version": "1.1.9",
+      "comments": {
+        "patch": [
+          {
+            "comment": "React 16.14",
+            "author": "dlannoye@microsoft.com",
+            "commit": "065e339ebd4cf95c28efd84d9d026365dbb0c14c",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 25 Jun 2021 18:19:58 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.1.8",
+      "version": "1.1.8",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.12.3",
+            "author": "ahkotb@microsoft.com",
+            "commit": "ae713299011b06464555f656819e8cd4ae81c4d7",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 24 Jun 2021 06:16:18 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.1.7",
+      "version": "1.1.7",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.12.2",
+            "author": "dlannoye@microsoft.com",
+            "commit": "acf81e9b7a2f415d24a58d04cf9893362eef5e35",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 23 Jun 2021 18:48:15 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.1.6",
+      "version": "1.1.6",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.12.1",
+            "author": "ahkotb@microsoft.com",
+            "commit": "4ef8f617a4fe6ee4eecbc08d2b1915b74a833eb0",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 23 Jun 2021 00:39:04 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.1.5",
+      "version": "1.1.5",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.12.0",
+            "author": "weharper@microsoft.com",
+            "commit": "2da565bd31d02bf119bcb6c99210e617e02b67de",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 20 Jun 2021 18:17:23 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.1.4",
+      "version": "1.1.4",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.11.4",
+            "author": "dlannoye@microsoft.com",
+            "commit": "813f4d84ae3324428efd515138f9c0a73f939510",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 18 Jun 2021 06:17:35 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.1.3",
+      "version": "1.1.3",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Fix signature help issue, more checks on model isDisposed",
+            "author": "wzh@microsoft.com",
+            "commit": "427fe30e463251eb1fbf0e5a0547b864375196ff",
+            "package": "@ms/powerfx-formulabar"
+          },
+          {
+            "comment": "Fluent UI upgrade to 8.19.1",
+            "author": "lustan@microsoft.com",
+            "commit": "f596264438ff9ffc51bba771fa8c58de2b257136",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 18 Jun 2021 00:18:13 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.1.2",
+      "version": "1.1.2",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.11.3",
+            "author": "ahkotb@microsoft.com",
+            "commit": "0cfd51c32bc46f2164333673ae8675c19bf42471",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 17 Jun 2021 00:15:18 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.1.1",
+      "version": "1.1.1",
+      "comments": {
+        "none": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.11.2",
+            "author": "taras.kharchenko@microsoft.com",
+            "commit": "68c05886d810b292e2d19f59c85adf7d6b27a99b",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 16 Jun 2021 06:16:11 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.1.1",
+      "version": "1.1.1",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.11.1",
+            "author": "ahkotb@microsoft.com",
+            "commit": "2fbebf8161e072d5d9500a70d86a2bcfe97504ea",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 13 Jun 2021 06:18:13 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.1.0",
+      "version": "1.1.0",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Fluent UI V8 upgrade",
+            "author": "lustan@microsoft.com",
+            "commit": "18966b8870c39cf5f7178b6ad1305620a0f18602",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ],
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.11.0",
+            "author": "lustan@microsoft.com",
+            "commit": "18966b8870c39cf5f7178b6ad1305620a0f18602",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 06 Jun 2021 00:14:59 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.0.20",
+      "version": "1.0.20",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.10.5",
+            "author": "david@lannoye.net",
+            "commit": "77ee3ae39b67e4e3db895ad42ac9efff41161b06",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 05 Jun 2021 06:14:00 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.0.19",
+      "version": "1.0.19",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Add icon button to expand/collapse formula bar editor",
+            "author": "wzh@microsoft.com",
+            "commit": "733fc454b9de0ddb326bfc7e40c8022b4ab037f1",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 04 Jun 2021 23:26:49 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.0.18",
+      "version": "1.0.18",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Support SignatureHelp provider",
+            "author": "wzh@microsoft.com",
+            "commit": "6636997eb96346ee4feb70f741bf4a1b6b5e9db8",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 03 Jun 2021 00:17:00 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.0.17",
+      "version": "1.0.17",
+      "comments": {
+        "patch": [
+          {
+            "comment": "powerfx-formulabar to pure-package layer",
+            "author": "alroudak@microsoft.com",
+            "commit": "9a673e6c86bcdfdae9ca1256ef937528a1a7bc01",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 02 Jun 2021 00:16:11 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.0.16",
+      "version": "1.0.16",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Highlight matching brackets and update theme color",
+            "author": "wzh@microsoft.com",
+            "commit": "e4c96771e08599e9d0dc40b197fcf091f1223acb",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 28 May 2021 00:17:13 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.0.15",
+      "version": "1.0.15",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Update PowerFxFormulaBar interface and fix a dispose issue",
+            "author": "wzh@microsoft.com",
+            "commit": "7eee55e80e00eeed7fe217cbd56e6d36efe7a3a6",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 26 May 2021 06:15:14 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.0.14",
+      "version": "1.0.14",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.10.3",
+            "author": "ahkotb@microsoft.com",
+            "commit": "1acafde60f1fe225b04ad757486592d8b36e4aee",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 26 May 2021 00:14:31 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.0.13",
+      "version": "1.0.13",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Fix PowerAppsControlProperty.getControlPropertyAsync is called more than once issue",
+            "author": "wzh@microsoft.com",
+            "commit": "d82bec25286ed2e523acdacc8360b5d3d3e9dc72",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 22 May 2021 06:14:13 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.0.12",
+      "version": "1.0.12",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Fix Monaco-editor to LSP line/column issue",
+            "author": "wzh@microsoft.com",
+            "commit": "c0089aadd923cca126e216cbfa21c5a9cd512244",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 21 May 2021 18:15:14 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.0.11",
+      "version": "1.0.11",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Add LSP configuration",
+            "author": "wzh@microsoft.com",
+            "commit": "067c24ab2c776a90e7bf93276c7719ee5e353a69",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 21 May 2021 06:14:23 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.0.10",
+      "version": "1.0.10",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Add PowerFxFormulaEditor and PowerFxLanguageClient",
+            "author": "wzh@microsoft.com",
+            "commit": "d148078993843557c0d4bb8a7695acf1a97a1d49",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 20 May 2021 06:15:28 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.0.9",
+      "version": "1.0.9",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.10.2",
+            "author": "jacalhou@microsoft.com",
+            "commit": "23513d2fcfd80c94c2bfcc86d955455abf4e09cb",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 20 May 2021 00:15:42 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.0.8",
+      "version": "1.0.8",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Update vscode-languageserver-protocol package",
+            "author": "wzh@microsoft.com",
+            "commit": "f00e28700d0f9418510484a8337b138ce8b34254",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 19 May 2021 18:49:38 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.0.7",
+      "version": "1.0.7",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Manually bumped versions to synced to the feed",
+            "author": "email not defined",
+            "commit": "5e4fc318aa30b25a9ba9f51dca410c00eae446ba",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 19 May 2021 17:25:12 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.0.6",
+      "version": "1.0.6",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.10.0",
+            "author": "lustan@microsoft.com",
+            "commit": "30cfccd6ab8b89234597936c7441fc17fd74a1eb",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Mon, 17 May 2021 18:20:17 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.0.5",
+      "version": "1.0.5",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Initial Layers in package.json",
+            "author": "dlannoye@microsoft.com",
+            "commit": "b176f0758e15d495cbc6353807a7685a5db2ef0d",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 14 May 2021 00:04:03 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.0.4",
+      "version": "1.0.4",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.9.7",
+            "author": "dlannoye@microsoft.com",
+            "commit": "42c1cdf571be05cb13ff7c8f76a388fe1a702191",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 12 May 2021 00:22:43 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.0.3",
+      "version": "1.0.3",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.9.6",
+            "author": "lustan@microsoft.com",
+            "commit": "2b200d13f7eef9b0769fada5713162747185c4bf",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 01 May 2021 00:14:00 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.0.2",
+      "version": "1.0.2",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Add mock LSP server for demo/test",
+            "author": "wzh@microsoft.com",
+            "commit": "92717f2d995ac892565a1342ace3e78c4d7776e0",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 27 Apr 2021 00:17:35 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.0.1",
+      "version": "1.0.1",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Bump @ppux/build-scripts to v0.9.5",
+            "author": "dlannoye@microsoft.com",
+            "commit": "553b01d42e4afec1e5a6c448e3e105570a8740ba",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 16 Apr 2021 00:14:47 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.0.0",
+      "version": "1.0.0",
+      "comments": {
+        "major": [
+          {
+            "comment": "Update language name to PowerFx",
+            "author": "wzh@microsoft.com",
+            "commit": "1cac0cc9ecc58bc97b46a16aca910b3cfad6b88f",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 15 Apr 2021 00:14:02 GMT",
+      "tag": "@ms/powerfx-formulabar_v1.0.0",
+      "version": "1.0.0",
+      "comments": {
+        "none": [
+          {
+            "comment": "Initiate PowerFx formular bar package",
+            "author": "wzh@microsoft.com",
+            "commit": "e9fff92f8c8b9c91d8a07e898b75d1d200395535",
+            "package": "@ms/powerfx-formulabar"
+          }
+        ]
+      }
+    }
+  ]
+}

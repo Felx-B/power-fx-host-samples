@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`basic test 1`] = `
+<StyledPowerFxFormulaEditorBase
+  defaultValue=""
+  editorFocusOnMount={true}
+  getDocumentUriAsync={[Function]}
+  maxLineCount={1}
+  messageProcessor={
+    Object {
+      "addListener": [Function],
+      "sendAsync": [Function],
+    }
+  }
+  minLineCount={1}
+/>
+`;
+
+exports[`with monacoEditorOptions test 1`] = `
+<StyledPowerFxFormulaEditorBase
+  defaultValue=""
+  editorFocusOnMount={true}
+  getDocumentUriAsync={[Function]}
+  maxLineCount={1}
+  messageProcessor={
+    Object {
+      "addListener": [Function],
+      "sendAsync": [Function],
+    }
+  }
+  minLineCount={1}
+  monacoEditorOptions={
+    Object {
+      "fixedOverflowWidgets": false,
+      "fontSize": 35,
+    }
+  }
+/>
+`;
