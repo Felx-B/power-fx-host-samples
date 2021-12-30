@@ -13,7 +13,9 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    NuMonacoEditorModule.forRoot({}),
+    NuMonacoEditorModule.forRoot({
+      baseUrl: `lib`
+    }),
     FormsModule
   ],
   providers: [],
