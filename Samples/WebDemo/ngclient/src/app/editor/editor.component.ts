@@ -62,7 +62,8 @@ export class EditorComponent implements OnInit, AfterViewInit {
         async () => 'powerfx://demo',
         async (payload: string) => {
           //TODO send server
-          console.log('request serveur', payload);
+          await this.sendAsync(payload);
+          // console.log('request serveur', payload);
         },
         (params: PublishDiagnosticsParams): void => {
 
@@ -122,6 +123,46 @@ export class EditorComponent implements OnInit, AfterViewInit {
     }
   }
 
+
+  private getServerUrl() {
+    // dev mode use dev server
+    if (window.location.hostname === 'localhost') {
+      return 'https://localhost:5001/';
+    };
+
+    return `${window.location.origin}${window.location.pathname}`;
+  }
+
+  private async sendDataAsync(endpoint: string, data: string): Promise<Response> {
+    const url = this.getServerUrl();
+    return await fetch(url + endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: data
+    });
+  }
+
+  private async sendAsync(data: string) {
+    console.log('[LSP Client] Send: ' + data);
+
+    try {
+      const result = await this.sendDataAsync('lsp', data);
+      if (!result.ok) {
+        return;
+      }
+
+      const response = await result.text();
+      if (response) {
+        const responseArray = JSON.parse(response);
+        responseArray.forEach((item: string) => {
+          console.log('[LSP Client] Receive: ' + item);
+          this.languageClient?.onDataReceivedFromLanguageServer(item);
+        })
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
   private provideCompletionItems =
     (model: monaco.editor.ITextModel,
