@@ -1,7 +1,7 @@
 /*!
  * Copyright (C) Microsoft Corporation. All rights reserved.
  */
-import monaco from 'monaco-editor/esm/vs/editor/editor.api';
+// import monaco from 'monaco-editor/esm/vs/editor/editor.api';
 
 export const themeName = 'powerfx-theme';
 

@@ -1,2 +1,2 @@
 
-<nu-monaco-editor [(ngModel)]="value" [options]="editorOptions"></nu-monaco-editor>
+<nu-monaco-editor [model]="model" [options]="editorOptions" (event)="showEvent($event)" #editor></nu-monaco-editor>
