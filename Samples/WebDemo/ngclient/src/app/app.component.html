@@ -1,11 +1,9 @@
-<div class="box">
-  TODO Context
-</div>
+<h3>Context</h3>
+<textarea> TODO Context</textarea>
 
-<app-editor class="box">
-
+<h3>Formula</h3>
+<app-editor class="box" (onChange)="valueChanged($event)">
 </app-editor>
 
-<div class="box">
-  TODO result
-</div>
+<h3>Result</h3>
+<textarea [(ngModel)]="result"></textarea>

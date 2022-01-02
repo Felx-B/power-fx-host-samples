@@ -1,6 +1,8 @@
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { EventEmitter, ChangeDetectorRef, Component, ElementRef, OnInit, Output, ViewChild } from '@angular/core';
 import { NuMonacoEditorComponent, NuMonacoEditorEvent, NuMonacoEditorModel } from '@ng-util/monaco-editor';
+
 import { Diagnostic, PublishDiagnosticsParams } from 'vscode-languageserver-protocol';
+import { HttpService } from '../http.service';
 import { defaultEditorOptions, _getCompletionKind, _getCompletionTriggerKind, _getMarkerSeverity } from '../monaco/defaultEditor';
 import { PowerFxLanguageClient, PublishTokensParams, TokenResultType } from '../monaco/PowerFxLanguageClient';
 import { addProvidersForModel, ensureLanguageRegistered } from '../monaco/PowerFxSyntax';
@@ -12,9 +14,9 @@ import { ensureThemeSetup } from '../monaco/PowerFxTheme';
 @Component({
   selector: 'app-editor',
   templateUrl: './editor.component.html',
-  styleUrls: ['./editor.component.css']
+  styleUrls: ['./editor.component.css'],
 })
-export class EditorComponent implements OnInit, AfterViewInit {
+export class EditorComponent {
 
 
   @ViewChild("editor")
@@ -25,30 +27,25 @@ export class EditorComponent implements OnInit, AfterViewInit {
   modelMonaco?: monaco.editor.ITextModel | null = null;
   languageClient?: PowerFxLanguageClient;
   _normalizedCompletionLookup: { [lowercase: string]: string } = {};
-  constructor(private cdr: ChangeDetectorRef) { }
 
-  ngOnInit(): void {
-  }
+  @Output()
+  public onChange = new EventEmitter<string>();
 
-  ngAfterViewInit() {
-    // console.log(this.editor);
+  constructor(private http: HttpService, private cdr: ChangeDetectorRef) { }
 
-    // const modelUri = monaco.Uri.parse('powerfx://demo');
-    // const model = monaco.editor.getModel(modelUri);
-    // console.log(model, 'after view init');
-  }
 
   showEvent(e: NuMonacoEditorEvent) {
     if (e.type === 'init') {
+      const modelUri = monaco.Uri.parse('powerfx://demo');
+
       this.model = {
         language: 'powerfx',
-        uri: monaco.Uri.parse('powerfx://demo'),
-        value: 'Pow(4 + 6, 2)'
+        uri: modelUri,
+        value: 'Power(4 + 6, 2)'
       };
 
       this.cdr.detectChanges();
 
-      const modelUri = monaco.Uri.parse('powerfx://demo');
       const model = monaco.editor.getModel(modelUri);
       this.modelMonaco = model;
       if (!this.modelMonaco)
@@ -91,8 +88,6 @@ export class EditorComponent implements OnInit, AfterViewInit {
             return;
           }
 
-
-
           const names: HighlightedName[] = [];
           for (const [key, value] of Object.entries(params.tokens)) {
             // _normalizedCompletionLookup[key.toLowerCase()] = key;
@@ -120,33 +115,37 @@ export class EditorComponent implements OnInit, AfterViewInit {
 
       addProvidersForModel(this.modelMonaco, this.provideCompletionItems, this.provideSignatureHelp);
 
+      const monacoEditor = e.editor as monaco.editor.IStandaloneCodeEditor;
+      if (!monacoEditor)
+        return;
+
+      this.modelMonaco.onDidChangeContent((e) => {
+        console.log(e, this.modelMonaco?.getValue());
+        this.onChange.emit(this.modelMonaco?.getValue());
+      });
+
+      // this._disposeEditorSubscriptions();
+
+      // this._subscriptions.push(monacoEditor.onDidBlurEditorWidget(this._onBlur));
+      // this._subscriptions.push(monacoEditor.onDidFocusEditorWidget(this._onFocus));
+      // this._subscriptions.push(monacoEditor.onDidChangeCursorPosition(this._onDidChangeCursorPosition));
+      // this._subscriptions.push(monacoEditor.onKeyDown(this._onKeyDown));
+      // this._subscriptions.push(monacoEditor.onKeyUp(this._onKeyUp));
+      // this._subscriptions.push(this.modelMonaco.onDidChangeContent(this._onChange));
+
     }
   }
 
 
-  private getServerUrl() {
-    // dev mode use dev server
-    if (window.location.hostname === 'localhost') {
-      return 'https://localhost:5001/';
-    };
 
-    return `${window.location.origin}${window.location.pathname}`;
-  }
 
-  private async sendDataAsync(endpoint: string, data: string): Promise<Response> {
-    const url = this.getServerUrl();
-    return await fetch(url + endpoint, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: data
-    });
-  }
+
 
   private async sendAsync(data: string) {
     console.log('[LSP Client] Send: ' + data);
 
     try {
-      const result = await this.sendDataAsync('lsp', data);
+      const result = await this.http.sendDataAsync('lsp', data);
       if (!result.ok) {
         return;
       }
@@ -291,4 +290,6 @@ export class EditorComponent implements OnInit, AfterViewInit {
       }
     };
   };
+
+
 }

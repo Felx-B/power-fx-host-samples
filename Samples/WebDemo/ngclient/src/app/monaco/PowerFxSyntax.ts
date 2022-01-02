@@ -51,7 +51,7 @@ export function ensureLanguageRegistered(monacoParam: typeof monaco, syntax: Syn
   }
 
   monacoParam.languages.registerCompletionItemProvider(languageName, {
-    triggerCharacters: ['.', '!', '(', ',', '{'],
+    triggerCharacters: ['.', '!', '(', ',', '{', ';'],
     provideCompletionItems: async (model, ...rest) => {
       if (completionProviderMapping.has(model)) {
         const completionProvider = completionProviderMapping.get(model)!;
@@ -99,8 +99,8 @@ export function ensureLanguageRegistered(monacoParam: typeof monaco, syntax: Syn
   });
 
   monacoParam.languages.registerSignatureHelpProvider(languageName, {
-    signatureHelpTriggerCharacters: ['(', ','],
-    signatureHelpRetriggerCharacters: ['(', ','],
+    signatureHelpTriggerCharacters: ['(', ',', ';'],
+    signatureHelpRetriggerCharacters: ['(', ',', ';'],
     provideSignatureHelp: (model, position, token, context) => {
       if (signatureHelpProviderMapping.has(model)) {
         const signatureHelpProvider = signatureHelpProviderMapping.get(model)!;
