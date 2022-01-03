@@ -74,6 +74,7 @@ export class EditorComponent {
       this.modelMonaco = model;
       if (!this.modelMonaco) return;
 
+
       ensureThemeSetup(monaco);
       ensureLanguageRegistered(monaco, {
         useSemicolons: false,
@@ -89,7 +90,6 @@ export class EditorComponent {
         async (payload: string) => {
           //TODO send server
           await this.sendAsync(payload);
-          // console.log('request serveur', payload);
         },
         (params: PublishDiagnosticsParams): void => {
           if (!monaco || !this.modelMonaco) {
@@ -111,14 +111,14 @@ export class EditorComponent {
           monaco.editor.setModelMarkers(this.modelMonaco, '', markers);
         },
         (params: PublishTokensParams): void => {
-          // const model = monaco.editor.getModel()
+
           if (!monaco || !this.modelMonaco) {
             return;
           }
 
           const names: HighlightedName[] = [];
           for (const [key, value] of Object.entries(params.tokens)) {
-            // _normalizedCompletionLookup[key.toLowerCase()] = key;
+            this._normalizedCompletionLookup[key.toLowerCase()] = key;
             switch (value) {
               case TokenResultType.Function:
                 names.push({ name: key, kind: NameKind.Function });
@@ -146,6 +146,8 @@ export class EditorComponent {
         this.provideCompletionItems,
         this.provideSignatureHelp
       );
+
+      this.languageClient.notifyDidOpenAsync(this.modelMonaco.getValue());
 
       const monacoEditor = e.editor as monaco.editor.IStandaloneCodeEditor;
       if (!monacoEditor) return;
