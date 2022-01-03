@@ -1,11 +1,38 @@
-import { EventEmitter, ChangeDetectorRef, Component, ElementRef, OnInit, Output, ViewChild } from '@angular/core';
-import { NuMonacoEditorComponent, NuMonacoEditorEvent, NuMonacoEditorModel } from '@ng-util/monaco-editor';
+import {
+  EventEmitter,
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  OnInit,
+  Output,
+  ViewChild,
+} from '@angular/core';
+import {
+  NuMonacoEditorComponent,
+  NuMonacoEditorEvent,
+  NuMonacoEditorModel,
+} from '@ng-util/monaco-editor';
 
-import { Diagnostic, PublishDiagnosticsParams } from 'vscode-languageserver-protocol';
+import {
+  Diagnostic,
+  PublishDiagnosticsParams,
+} from 'vscode-languageserver-protocol';
 import { HttpService } from '../http.service';
-import { defaultEditorOptions, _getCompletionKind, _getCompletionTriggerKind, _getMarkerSeverity } from '../monaco/defaultEditor';
-import { PowerFxLanguageClient, PublishTokensParams, TokenResultType } from '../monaco/PowerFxLanguageClient';
-import { addProvidersForModel, ensureLanguageRegistered } from '../monaco/PowerFxSyntax';
+import {
+  defaultEditorOptions,
+  _getCompletionKind,
+  _getCompletionTriggerKind,
+  _getMarkerSeverity,
+} from '../monaco/defaultEditor';
+import {
+  PowerFxLanguageClient,
+  PublishTokensParams,
+  TokenResultType,
+} from '../monaco/PowerFxLanguageClient';
+import {
+  addProvidersForModel,
+  ensureLanguageRegistered,
+} from '../monaco/PowerFxSyntax';
 import { HighlightedName, NameKind } from '../monaco/PowerFxSyntaxTypes';
 import { ensureThemeSetup } from '../monaco/PowerFxTheme';
 
@@ -17,9 +44,7 @@ import { ensureThemeSetup } from '../monaco/PowerFxTheme';
   styleUrls: ['./editor.component.css'],
 })
 export class EditorComponent {
-
-
-  @ViewChild("editor")
+  @ViewChild('editor')
   public editor?: NuMonacoEditorComponent;
 
   editorOptions = defaultEditorOptions;
@@ -27,12 +52,11 @@ export class EditorComponent {
   modelMonaco?: monaco.editor.ITextModel | null = null;
   languageClient?: PowerFxLanguageClient;
   _normalizedCompletionLookup: { [lowercase: string]: string } = {};
-
+  private _onNamesChanged: (names: HighlightedName[]) => void = () => null;
   @Output()
   public onChange = new EventEmitter<string>();
 
-  constructor(private http: HttpService, private cdr: ChangeDetectorRef) { }
-
+  constructor(private http: HttpService, private cdr: ChangeDetectorRef) {}
 
   showEvent(e: NuMonacoEditorEvent) {
     if (e.type === 'init') {
@@ -41,19 +65,24 @@ export class EditorComponent {
       this.model = {
         language: 'powerfx',
         uri: modelUri,
-        value: 'Power(4 + 6, 2)'
+        value: 'CountRows(Sequence(9))',
       };
 
       this.cdr.detectChanges();
 
       const model = monaco.editor.getModel(modelUri);
       this.modelMonaco = model;
-      if (!this.modelMonaco)
-        return;
-      // console.log(model, 'after view init');
+      if (!this.modelMonaco) return;
 
-      ensureThemeSetup(monaco)
-      ensureLanguageRegistered(monaco, { useSemicolons: false, highlightedNames: [] });
+      ensureThemeSetup(monaco);
+      ensureLanguageRegistered(monaco, {
+        useSemicolons: false,
+        highlightedNames: [],
+        subscribeToNames: (namesChanged) => {
+          this._onNamesChanged = namesChanged;
+        },
+        getNormalizedCompletionLookup: () => this._normalizedCompletionLookup,
+      });
 
       this.languageClient = new PowerFxLanguageClient(
         async () => 'powerfx://demo',
@@ -63,7 +92,6 @@ export class EditorComponent {
           // console.log('request serveur', payload);
         },
         (params: PublishDiagnosticsParams): void => {
-
           if (!monaco || !this.modelMonaco) {
             return;
           }
@@ -76,7 +104,7 @@ export class EditorComponent {
               startLineNumber: start.line,
               startColumn: start.character,
               endLineNumber: end.line,
-              endColumn: end.character + 1 // end character is included
+              endColumn: end.character + 1, // end character is included
             };
           });
 
@@ -109,15 +137,18 @@ export class EditorComponent {
             }
           }
 
-          // _onNamesChanged?.(names);
+          this._onNamesChanged?.(names);
         }
       );
 
-      addProvidersForModel(this.modelMonaco, this.provideCompletionItems, this.provideSignatureHelp);
+      addProvidersForModel(
+        this.modelMonaco,
+        this.provideCompletionItems,
+        this.provideSignatureHelp
+      );
 
       const monacoEditor = e.editor as monaco.editor.IStandaloneCodeEditor;
-      if (!monacoEditor)
-        return;
+      if (!monacoEditor) return;
 
       this.modelMonaco.onDidChangeContent((e) => {
         console.log(e, this.modelMonaco?.getValue());
@@ -132,17 +163,11 @@ export class EditorComponent {
       // this._subscriptions.push(monacoEditor.onKeyDown(this._onKeyDown));
       // this._subscriptions.push(monacoEditor.onKeyUp(this._onKeyUp));
       // this._subscriptions.push(this.modelMonaco.onDidChangeContent(this._onChange));
-
     }
   }
 
-
-
-
-
-
   private async sendAsync(data: string) {
-    console.log('[LSP Client] Send: ' + data);
+    // console.log('[LSP Client] Send: ' + data);
 
     try {
       const result = await this.http.sendDataAsync('lsp', data);
@@ -154,29 +179,29 @@ export class EditorComponent {
       if (response) {
         const responseArray = JSON.parse(response);
         responseArray.forEach((item: string) => {
-          console.log('[LSP Client] Receive: ' + item);
+          // console.log('[LSP Client] Receive: ' + item);
           this.languageClient?.onDataReceivedFromLanguageServer(item);
-        })
+        });
       }
     } catch (err) {
       console.log(err);
     }
   }
 
-  private provideCompletionItems =
-    (model: monaco.editor.ITextModel,
-      position: monaco.Position,
-      context: monaco.languages.CompletionContext
-    ) =>
-      // Note: we call model methods up-front to avoid disposed model issue
-      // since there are other async operations inside _provideCompletionAsync
-      this._provideCompletionAsync(
-        model.getValue(),
-        position,
-        model.getWordAtPosition(position),
-        context.triggerKind,
-        context.triggerCharacter
-      )
+  private provideCompletionItems = (
+    model: monaco.editor.ITextModel,
+    position: monaco.Position,
+    context: monaco.languages.CompletionContext
+  ) =>
+    // Note: we call model methods up-front to avoid disposed model issue
+    // since there are other async operations inside _provideCompletionAsync
+    this._provideCompletionAsync(
+      model.getValue(),
+      position,
+      model.getWordAtPosition(position),
+      context.triggerKind,
+      context.triggerCharacter
+    );
 
   private _provideCompletionAsync = async (
     currentText: string,
@@ -190,13 +215,14 @@ export class EditorComponent {
     //   return { suggestions: [] };
     // }
 
-    const result = await this.languageClient?.requestProvideCompletionItemsAsync(
-      currentText,
-      position.lineNumber - 1,
-      position.column - 1,
-      _getCompletionTriggerKind(triggerKind),
-      triggerCharacter
-    );
+    const result =
+      await this.languageClient?.requestProvideCompletionItemsAsync(
+        currentText,
+        position.lineNumber - 1,
+        position.column - 1,
+        _getCompletionTriggerKind(triggerKind),
+        triggerCharacter
+      );
 
     if (!result) {
       return { suggestions: [] };
@@ -204,34 +230,36 @@ export class EditorComponent {
 
     const range = currentWordPosition
       ? {
-        startColumn: currentWordPosition.startColumn,
-        endColumn: currentWordPosition.endColumn,
-        startLineNumber: position.lineNumber,
-        endLineNumber: position.lineNumber
-      }
+          startColumn: currentWordPosition.startColumn,
+          endColumn: currentWordPosition.endColumn,
+          startLineNumber: position.lineNumber,
+          endLineNumber: position.lineNumber,
+        }
       : {
-        startColumn: position.column,
-        endColumn: position.column,
-        startLineNumber: position.lineNumber,
-        endLineNumber: position.lineNumber
-      };
+          startColumn: position.column,
+          endColumn: position.column,
+          startLineNumber: position.lineNumber,
+          endLineNumber: position.lineNumber,
+        };
 
-    const suggestions: monaco.languages.CompletionItem[] = result.items.map(item => {
-      const label = item.label;
-      this._normalizedCompletionLookup[label.toLowerCase()] = label;
-      return {
-        label,
-        documentation: item.documentation,
-        detail: item.detail,
-        kind: _getCompletionKind(item.kind),
-        range,
-        insertText: item.label
-      };
-    });
+    const suggestions: monaco.languages.CompletionItem[] = result.items.map(
+      (item) => {
+        const label = item.label;
+        this._normalizedCompletionLookup[label.toLowerCase()] = label;
+        return {
+          label,
+          documentation: item.documentation,
+          detail: item.detail,
+          kind: _getCompletionKind(item.kind),
+          range,
+          insertText: item.label,
+        };
+      }
+    );
 
     return {
       incomplete: !currentWordPosition,
-      suggestions
+      suggestions,
     };
   };
 
@@ -240,8 +268,7 @@ export class EditorComponent {
     position: monaco.Position,
     token: monaco.CancellationToken,
     context: monaco.languages.SignatureHelpContext
-  ) => this._provideSignatureHelpAsync(model.getValue(), position, context)
-
+  ) => this._provideSignatureHelpAsync(model.getValue(), position, context);
 
   private _provideSignatureHelpAsync = async (
     currentText: string,
@@ -252,11 +279,11 @@ export class EditorComponent {
       value: {
         signatures: [],
         activeSignature: 0,
-        activeParameter: 0
+        activeParameter: 0,
       },
       dispose: () => {
         return;
-      }
+      },
     };
 
     // const { lspConfig } = this.props;
@@ -276,20 +303,18 @@ export class EditorComponent {
 
     return {
       value: {
-        signatures: result.signatures.map(item => ({
+        signatures: result.signatures.map((item) => ({
           label: item.label,
           documentation: item.documentation,
           parameters: item.parameters || [],
-          activeParameter: item.activeParameter
+          activeParameter: item.activeParameter,
         })),
         activeSignature: result.activeSignature || 0,
-        activeParameter: result.activeParameter || 0
+        activeParameter: result.activeParameter || 0,
       },
       dispose: () => {
         return;
-      }
+      },
     };
   };
-
-
 }
