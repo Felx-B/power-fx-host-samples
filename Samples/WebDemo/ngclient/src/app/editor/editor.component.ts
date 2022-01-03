@@ -52,6 +52,7 @@ export class EditorComponent {
   modelMonaco?: monaco.editor.ITextModel | null = null;
   languageClient?: PowerFxLanguageClient;
   _normalizedCompletionLookup: { [lowercase: string]: string } = {};
+  private _version: number = 0;
   private _onNamesChanged: (names: HighlightedName[]) => void = () => null;
   @Output()
   public onChange = new EventEmitter<string>();
@@ -153,8 +154,9 @@ export class EditorComponent {
       if (!monacoEditor) return;
 
       this.modelMonaco.onDidChangeContent((e) => {
-        console.log(e, this.modelMonaco?.getValue());
-        this.onChange.emit(this.modelMonaco?.getValue());
+       const value = this.modelMonaco?.getValue();
+        this.onChange.emit(value);
+        this.languageClient?.notifyDidChangeAsync(value || "", this._version++);
       });
 
       // this._disposeEditorSubscriptions();
