@@ -1,10 +1,6 @@
-.box{
-
-  margin: 5px;
-  padding: 5px;
-}
 
 textarea{
-  width: 100%;
+  width: calc(100% - 6px);
   height: 100px;
+  border: 1px solid grey;
 }

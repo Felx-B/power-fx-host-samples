@@ -9,15 +9,21 @@ import { HttpService } from './http.service';
 export class AppComponent {
   title = 'ngclient';
   result = "";
+  context = JSON.stringify({ "A": "ABC", "B": { "Inner": 123 } })
+  expression = "";
 
   constructor(private http: HttpService, private cdr: ChangeDetectorRef){  }
 
   valueChanged(expression: any){
-    console.log("triggered", expression);
-   this._evalAsync("{}", expression);
+    this.expression = expression;
+   this.evalAsync(this.context, expression);
   }
 
-  private async _evalAsync (context: string, expression: string): Promise<void> {
+  contextChanged(){
+    this.evalAsync(this.context, this.expression);
+  }
+
+  private async evalAsync (context: string, expression: string): Promise<void> {
     const result = await this.http.sendDataAsync('eval', JSON.stringify({ context, expression }));
     if (!result.ok) {
       return;

@@ -3,12 +3,12 @@ import {
   ChangeDetectorRef,
   Component,
   Output,
+  Input,
 } from '@angular/core';
 import {
   NuMonacoEditorEvent,
   NuMonacoEditorModel,
 } from '@ng-util/monaco-editor';
-import { Context } from 'vm';
 
 import {
   Diagnostic,
@@ -47,9 +47,12 @@ export class EditorComponent {
   @Output()
   public onChange = new EventEmitter<string>();
 
+  @Input()
+  public context: string = "";
+
   constructor(private http: HttpService, private cdr: ChangeDetectorRef) {}
 
-  private getDocumentUriAsync = async () => 'powerfx://demo';
+  private getDocumentUriAsync = async () => `powerfx://demo?context=${this.context}`;
 
   showEvent(e: NuMonacoEditorEvent) {
     if (e.type === 'init') {
@@ -103,11 +106,11 @@ export class EditorComponent {
     });
   }
 
-  private async sendToLanguageServerAsync(payload: string) {
+  private sendToLanguageServerAsync = async (payload: string) => {
     await this.sendAsync(payload);
   }
 
-  private handleTokensNotification(params: PublishTokensParams) {
+  private handleTokensNotification = (params: PublishTokensParams) => {
     if (!monaco || !this.modelMonaco) {
       return;
     }
@@ -136,7 +139,7 @@ export class EditorComponent {
     this.onNamesChanged?.(names);
   }
 
-  private handleDiagnosticsNotification(params: PublishDiagnosticsParams) {
+  private handleDiagnosticsNotification = (params: PublishDiagnosticsParams) => {
     if (!monaco || !this.modelMonaco) {
       return;
     }
@@ -175,11 +178,11 @@ export class EditorComponent {
     }
   }
 
-  private async provideCompletionItemsAsync(
+  private provideCompletionItemsAsync = async (
     model: monaco.editor.ITextModel,
     position: monaco.Position,
     context: monaco.languages.CompletionContext
-  ) {
+  ) => {
     const currentText = model.getValue();
     const currentWordPosition = model.getWordAtPosition(position);
     const triggerKind = context.triggerKind;
@@ -233,12 +236,12 @@ export class EditorComponent {
     };
   }
 
-  private async provideSignatureHelpAsync(
+  private provideSignatureHelpAsync = async (
     model: monaco.editor.ITextModel,
     position: monaco.Position,
     token: monaco.CancellationToken,
     context: monaco.languages.SignatureHelpContext
-  ): Promise<monaco.languages.SignatureHelpResult> {
+  ): Promise<monaco.languages.SignatureHelpResult> => {
     const currentText = model.getValue();
 
     const noResult: monaco.languages.SignatureHelpResult = {

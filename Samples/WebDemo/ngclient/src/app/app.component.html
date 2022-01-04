@@ -1,8 +1,8 @@
 <h3>Context</h3>
-<textarea> TODO Context</textarea>
+<textarea [(ngModel)]="context" (ngModelChange)="contextChanged()"></textarea>
 
 <h3>Formula</h3>
-<app-editor class="box" (onChange)="valueChanged($event)">
+<app-editor class="box" (onChange)="valueChanged($event)" [context]="context">
 </app-editor>
 
 <h3>Result</h3>
